@@ -1,9 +1,9 @@
-name: Deploy
-  on:
+name: 'deploy'
+on:
     push:
       branches:
         - master
-  jobs:
+jobs:
     site-deploy:
       runs-on: ubuntu-latest
       steps:
