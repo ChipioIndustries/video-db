@@ -4,7 +4,7 @@ name: Deploy
       branches:
         - master
   jobs:
-    deploy:
+    site-deploy:
       runs-on: ubuntu-latest
       steps:
       - name: Deploy pages
