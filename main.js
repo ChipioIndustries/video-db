@@ -1,4 +1,4 @@
-var db = fetch('db.json').then(response => response.json()).then(data => {
-	createTable(data)
-}).catch(err => console.error(err))
-alert(db[1].title);
+var db = fetch('db.json').then(response => response.json()).catch(err => console.error(err))
+db.array.forEach(element => {
+	alert(element.title);
+});
