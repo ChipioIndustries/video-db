@@ -1,5 +1,7 @@
 let data = [];
 let tab = "video";
+let contentType = "movie";
+let searchTerm = "";
 let selection = null;
 
 function selectTab(tabName) {
@@ -36,16 +38,35 @@ function setFilters() {
 }
 
 function updateResults() {
-	document.getElementsByName("media-title").forEach((value, key, parent) => {
+	document.querySelectorAll(".entry").forEach((value, key, parent) => {
 		value.remove();
 	})
-	data.forEach((value, index, array) => {
-		//document.getElementById("insert-here").insertAdjacentHTML("afterend", "<p name='media-title'>" + value.title + "</p>")
+	getFilteredData().forEach((value, index, array) => {
+		document.querySelector("#video-tab-page").insertAdjacentHTML("beforeend", makeEntryDisplay(value))
 	})
 }
 
 function makeEntryDisplay(entry) {
+	return `
+	<div id="entry-`+ entry.name + `" class="entry" name="` + entry.name + `">
+		<img src="covers/`+ entry.name + `.png" class="cover">
+		<div class="entry-details">
+			<h2 class="entry-title">`+ entry.title + `</h2>
+			<p><b>UPC:</b> `+ entry.upc + `</p>
+			<p class="description">`+ entry.description + `</p>
+		</div>
+	</div>
+`
+}
 
+function getFilteredData() {
+	return data.filter((value, index, array) => {
+		if (value["media-type"] == tab && value["content-type"] == contentType && value.title.toLowerCase().search(searchTerm.toLowerCase()) != -1) {
+			return true
+		} else {
+			return false
+		}
+	})
 }
 
 function getEntryByName(name) {
@@ -57,9 +78,21 @@ async function loadDb() {
 	updateResults();
 }
 
+function handleFilters() {
+	document.querySelector("#media-type").addEventListener("change", () => {
+		contentType = document.querySelector("#media-type").value;
+		updateResults();
+	})
+	document.querySelector("#filter").addEventListener("input", () => {
+		searchTerm = document.querySelector("#filter").value;
+		updateResults();
+	})
+}
+
 window.onload = async function () {
 	selectTab("video");
 	setFilters();
+	handleFilters();
 	detectTabClicks();
 	await loadDb();
 }

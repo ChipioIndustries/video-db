@@ -23,7 +23,31 @@
 }
 
 body {
+	padding-top: 8px;
 	font-family: roboto;
+	width: 800px;
+	margin: auto;
+}
+
+.entry {
+	display: flex;
+	padding: 8px;
+	height: 200px;
+	background-color: beige;
+	margin-bottom: 8px;
+}
+
+.entry-details {
+	margin-left: 8px;
+}
+
+.entries {
+	margin-top: 8px;
+}
+
+.cover {
+	object-fit: contain;
+	height: 100%;
 }
 
 button.selected {

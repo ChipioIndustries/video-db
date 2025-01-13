@@ -5,7 +5,16 @@
 			"title": "Fantastic Mr. Fox",
 			"media-type": "video",
 			"content-type": "movie",
+			"description": "An urbane fox cannot resist returning to his farm raiding ways and then must help his community survive the farmers' retaliation.",
 			"upc": 715515225717
+		},
+		{
+			"name": "wall-e",
+			"title": "WALL-E",
+			"media-type": "video",
+			"content-type": "movie",
+			"description": "A robot who is responsible for cleaning a waste-covered Earth meets another robot and falls in love with her. Together, they set out on a journey that will alter the fate of mankind.",
+			"upc": 715515279413
 		}
 	]
 }
