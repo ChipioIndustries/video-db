@@ -1,9 +1,10 @@
 {
 	"data": [
 		{
+			"name": "fantastic-mr-fox",
 			"title": "Fantastic Mr. Fox",
+			"media-type": "video",
 			"content-type": "movie",
-			"media-format": "Blu-ray",
 			"upc": 715515225717
 		}
 	]

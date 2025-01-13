@@ -5,10 +5,35 @@
 	<title>Chase's Media Database</title>
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
 	<script type="text/javascript" src="main.js"></script>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	Hello World!
+	<div id="tabs">
+		<button class="tab" id="video-tab" name="video">Video</button>
+		<button class="tab" id="music-tab" name="music">Music</button>
+	</div>
+	<div id="tab-pages">
+		<div id="video-tab-page" name="video" class="tab-page">
+			<div id="filters">
+				<label for="media-type">Content Type:</label>
+				<select id="media-type" name="media-type">
+					<option value="movie">Movie</option>
+					<option value="tv show">TV Show</option>
+				</select>
+				<label for="filter">Filter:</label>
+				<input type="text" id="filter" name="filter">
+			</div>
+			<div id="entry-fantastic-mr-fox" class="entry" name="fantastic-mr-fox">
+				<h2 class="entry-title">Fantastic Mr. Fox</h2>
+				<p><b>UPC: </b></p>
+				<p class="description"></p>
+			</div>
+		</div>
+		<div id="music-tab-page" name="music" class="tab-page">
+			HELLO MUSIC
+		</div>
+	</div>
 	<p id="insert-here"></p>
 </body>
 
